@@ -74,4 +74,25 @@ const updateStudent = async (req, res, next) => {
   });
 };
 
-module.exports = { registerStudent, updateStudent };
+const getStudent = async (req, res) => {
+  const id = req.params.id;
+  const student = await Student.findById(id);
+
+  return res.status(200).json({
+    success: true,
+    student
+  })
+}
+
+const deleteStudent = async (req, res) => {
+  const id = req.params.id;
+  const del = await Student.findByIdAndDelete(id);
+
+  return res.status(200).json({
+    success:true,
+    msg: "User deleted"
+  })
+}
+
+
+module.exports = { registerStudent, updateStudent, getStudent, deleteStudent };

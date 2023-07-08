@@ -1,5 +1,6 @@
 const APIError = require('../errors/apiError')
 const Admin = require('../db/admin')
+const School = require('../db/school')
 
 const adregister = async(req,res) => {
     const {username,email,password} = req.body;
@@ -41,6 +42,26 @@ const adgetUser = (req,res) => {
     })
 }
 
+const createSchool = async (req, res) => {
+    const {name} = req.body;
+
+    const school = await School({name});
+
+    return res.status(201).json(school);
+} 
+
+const addTeacher = async (req, res) => {
+    const {id} = req.body;
+
+    const school = await School.findById(id);
+
+    school.teacher.push(id);
+
+    await school.save();
+
+    return res.status(201).json(school);
+}
+
 module.exports = {
-    adregister,adlogin,adgetUser
+    adregister,adlogin,adgetUser, createSchool, addTeacher
 }

@@ -13,4 +13,4 @@ const SchoolSchema=new Schema({
         }
     ]
 });
-module.exports=moongoose.model("school",SchoolSchema)
+module.exports=moongoose.model("School",SchoolSchema)
