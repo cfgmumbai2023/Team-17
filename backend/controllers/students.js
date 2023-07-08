@@ -9,7 +9,6 @@ const registerStudent = async (req, res, next) => {
     age,
     disability,
     severity,
-    program,
     level,
     gender,
     dob,
@@ -27,7 +26,6 @@ const registerStudent = async (req, res, next) => {
     age,
     disability,
     severity,
-    program,
     level,
     gender,
     dob,
@@ -46,24 +44,24 @@ const registerStudent = async (req, res, next) => {
 };
 
 const updateStudent = async (req, res, next) => {
-  const {
-    name,
-    bmcschool,
-    age,
-    disability,
-    severity,
-    program,
-    level,
-    gender,
-    dob,
-    doa,
-    udid,
-    aadhar,
-    contact,
-    school,
-    standard,
-    teacher,
-  } = req.body;
+  // const {
+  //   name,
+  //   bmcschool,
+  //   age,
+  //   disability,
+  //   severity,
+  //   program,
+  //   level,
+  //   gender,
+  //   dob,
+  //   doa,
+  //   udid,
+  //   aadhar,
+  //   contact,
+  //   school,
+  //   standard,
+  //   teacher,
+  // } = req.body;
 
   const id = req.params.id;
   const student = await Student.findByIdAndUpdate(id, req.body);

@@ -16,6 +16,10 @@ const TeacherSchema = new mongoose.Schema({
         required:[true,"Please provide Email"],
         unique:true
     },
+    school:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'School'
+    }
 },{
     timestamps:true
 })

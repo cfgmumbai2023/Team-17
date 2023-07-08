@@ -1,16 +1,21 @@
 const APIError = require('../errors/apiError')
 const Teacher = require('../db/teacher')
+const School = require('../db/school')
 
 const register = async(req,res) => {
-    const {username,email,password} = req.body;
-    if(!username || !email || !password || username === "" || email === "" || password === ""){
+    const {username,email,password,school} = req.body;
+    if(!username || !email || !password || !school || username === "" || email === "" || password === ""){
         throw new APIError('Please provide valid credentials',400);
     }
     const chechUser = await Teacher.findOne({email:email})
     if(chechUser){
         throw new APIError('Email already exists',400);
     }
-    const user = await Teacher.create({username,email,password});
+    const checkSchool = await School.findOne({name:school})
+    if(!checkSchool){
+        throw new APIError('No School Exists',400);
+    }
+    const user = await Teacher.create({username,email,password,school:checkSchool._id});
     res.status(201).json({
         username:user.username,
         email:user.email
