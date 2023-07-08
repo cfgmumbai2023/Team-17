@@ -22,10 +22,6 @@ const StudentSchema = new mongoose.Schema({
     enum: ["Mild", "Moderate", "Severe"],
     required: true,
   },
-  program: {
-    type: String,
-    required: true,
-  },
   level: {
     type: Number,
     required: true,
@@ -42,13 +38,10 @@ const StudentSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  udid: {
-    type: String,
-    required: true,
-  },
   aadhar: {
     type: String,
     required: true,
+    unique: true,
   },
   address: {
     type: String,

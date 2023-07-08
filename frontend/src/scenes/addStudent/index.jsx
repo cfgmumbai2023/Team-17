@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useState } from "react";
 const AddStudent = () => {
     return (
         <div className="container" style={{width:"600px"}}>
@@ -143,9 +142,10 @@ const AddStudent = () => {
                     Submit
                 </button>
             </form>
-
-        </div>
-    );
+    </div>
+  );
 };
 
+
 export default AddStudent;
+

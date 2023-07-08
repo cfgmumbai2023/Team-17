@@ -32,6 +32,7 @@ function App() {
               <Route path="/" element={<Navigate to="/addStudent" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/addStudent" element={<AddStudent />} />
+              <Route path="/viewGroups" element={<ViewGroups />} />
               <Route path="/updateStudentPerformance" element={<UpdateStudents />} />
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />

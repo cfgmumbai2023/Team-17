@@ -45,23 +45,13 @@ const adgetUser = (req,res) => {
 const createSchool = async (req, res) => {
     const {name} = req.body;
 
-    const school = await School({name});
+    const school = School({name});
+    await school.save()
 
     return res.status(201).json(school);
 } 
 
-const addTeacher = async (req, res) => {
-    const {id} = req.body;
-
-    const school = await School.findById(id);
-
-    school.teacher.push(id);
-
-    await school.save();
-
-    return res.status(201).json(school);
-}
 
 module.exports = {
-    adregister,adlogin,adgetUser, createSchool, addTeacher
+    adregister,adlogin,adgetUser, createSchool
 }

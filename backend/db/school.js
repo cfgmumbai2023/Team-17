@@ -6,11 +6,11 @@ const SchoolSchema=new Schema({
         type:"string",
         required:true
     },
-    teacher:[
-        {
-            type:Schema.Types.ObjectId,
-            ref:"Teacher"
-        }
-    ]
+    // teacher:[
+    //     {
+    //         type:Schema.Types.ObjectId,
+    //         ref:"Teacher"
+    //     }
+    // ]
 });
 module.exports=moongoose.model("School",SchoolSchema)
