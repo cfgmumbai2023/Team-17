@@ -4,9 +4,6 @@ const {register,login,getUser} = require('../controllers/teachers')
 const authHandler = require('../middleware/authHandler')
 
 router.get('/',authHandler,getUser)
-
 router.post('/register',register)
-
 router.post('/login',login)
-
 module.exports = router;
