@@ -14,7 +14,7 @@ app.get('/',(req,res)=>{
     res.send('Hi JPMC')
 })
 
-app.use('/api/users',require('./routes/users'))
+app.use('/api/users',require('./routes/teachers'))
 app.use('/api/admin',require('./routes/admin'))
 
 app.use(notFoundHandler)
