@@ -7,6 +7,7 @@ import { themeSettings } from "theme";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
 import AddStudent from "scenes/addStudent";
+import ViewGroups from "scenes/viewGroups";
 import UpdateStudents from "scenes/updateStudents";
 import Products from "scenes/products";
 import Customers from "scenes/customers";
