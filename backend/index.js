@@ -15,6 +15,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/users',require('./routes/users'))
+app.use('/api/admin',require('./routes/admin'))
 
 app.use(notFoundHandler)
 app.use(errorHandler) 
