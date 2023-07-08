@@ -1,45 +1,63 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-const ViewGroups = () => {
+const App = () => {
   const [groups, setGroups] = useState([]);
+  const [students, setStudents] = useState([]);
 
-  useEffect(() => {
-    // Fetch the groups data
-    fetchGroups();
-  }, []);
-
-  // Function to fetch groups data
   const fetchGroups = async () => {
-    try {
-      const response = await fetch("", {
+    const response = await fetch(
+      "http://localhost:5000/api/groups/getGroups/",
+      {
         headers: {
-          Authorization: "Bearer your-access-token",
+          authorization:
+            "Bearer ",
         },
         method: "GET",
-      });
-
-      if (!response.ok) {
-        throw new Error("Request failed");
       }
+    );
+    const data = await response.json();
+    setGroups(data);
+  };
 
-      const data = await response.json();
-      setGroups(data);
-    } catch (error) {
-      console.error("Error fetching groups:", error);
-    }
+  const showStudent = (group) => {
+    setStudents(group.students);
   };
 
   return (
-    <div>
-      {/* Render the groups data */}
-      {groups.map((group) => (
-        <div key={group.id}>
-          <h3>{group.name}</h3>
-          {/* Render other group details */}
+    <div className="container">
+      <div style={{ display: "flex" }}>
+        <div style={{ flex: 1 }}>
+          <h2>Groups</h2>
+          <ul>
+            {groups.map((group) => (
+              <li key={group.id}>
+                <h5>{group.objective}</h5>
+                <button className="btn-primary btn" onClick={() => showStudent(group)}>
+                  Show Students
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
-      ))}
+        <div style={{ flex: 1 }}>
+          <h2>Students</h2>
+          {students.length > 0 ? (
+            students.map((student) => (
+              <div key={student.id}>
+                <h5>{student.name}</h5>
+                <p>{student.email}</p>
+              </div>
+            ))
+          ) : (
+            <p>No students to show</p>
+          )}
+        </div>
+      </div>
+      <button className="btn-primary btn" onClick={fetchGroups}>
+        Load Groups
+      </button>
     </div>
   );
 };
 
-export default ViewGroups;
+export default App;
