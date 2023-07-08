@@ -7,10 +7,10 @@ const authHandler = require("../middleware/authHandler")
 router.post("/createevaluation/:id",authHandler, async (req, res) => {
     const evaluationId = req.params.id;
     const { quarter, year, totalscore, parameters } = req.body;
-    const evaluation = await Evaluation.findById(evaluationId);
+    // const evaluation = await Evaluation.findById(evaluationId);
 
     try {
-        await Evaluation.create({
+        const eval = await Evaluation.create({
             quarter: quarter,
             year: year,
             totalscore: totalscore,
@@ -18,7 +18,7 @@ router.post("/createevaluation/:id",authHandler, async (req, res) => {
             student: evaluationId
 
         })
-        res.json({ success: true });
+        res.json({ success: true,eval:eval});
     } catch (error) {
         console.log(error);
         res.json({ success: false });

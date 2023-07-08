@@ -7,10 +7,10 @@ const authHandler = require('../middleware/authHandler')
 
 router.post('/registerStudent',authHandler, registerStudent)
 
-router.post('/updateStudent',authHandler, updateStudent)
+router.post('/updateStudent/:id',authHandler, updateStudent)
 
-router.get('/getStudent',authHandler, getStudent)
+router.get('/getStudent/:id',authHandler, getStudent)
 
-router.delete('/deleteStudent',authHandler, deleteStudent)
+router.delete('/deleteStudent/:id',authHandler, deleteStudent)
 
 module.exports = router;

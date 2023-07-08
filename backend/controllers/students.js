@@ -18,9 +18,9 @@ const registerStudent = async (req, res, next) => {
     contact,
     school,
     standard,
-    teacher,
+    address
   } = req.body;
-  const student = await Student.create({
+  const student = Student({
     name,
     bmcschool,
     age,
@@ -35,8 +35,11 @@ const registerStudent = async (req, res, next) => {
     contact,
     school,
     standard,
-    teacher,
+    address
   });
+
+  student.teacher = req.user.id;
+  await student.save();
   res.status(201).json({
     success: true,
     student,
@@ -64,7 +67,7 @@ const updateStudent = async (req, res, next) => {
   // } = req.body;
 
   const id = req.params.id;
-  const student = await Student.findByIdAndUpdate(id, req.body);
+  const student = await Student.findByIdAndUpdate(id, req.body,{new:true});
 
   res.status(201).json({
     success: true,
@@ -74,7 +77,7 @@ const updateStudent = async (req, res, next) => {
 
 const getStudent = async (req, res) => {
   const id = req.params.id;
-  const student = await Student.findOne({aadhar:id});
+  const student = await Student.findById(id);
 
   return res.status(200).json({
     success: true,

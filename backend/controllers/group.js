@@ -7,14 +7,14 @@ const createGroup = async(req,res) => {
         throw new APIError("Please provide Group Objective",400);
     }
 
-    const group = await Group.create({objective: objective,teacher:req.user._id});
-
+    const group = await Group.create({objective: objective,teacher:req.user.id});
+    console.log(group);
     return res.status(201).json(group)
 }
 
 const getGroups = async (req, res) => {
-    const id = req.user._id;
-    const groups = await Group.find({teacher:id});
+    const id = req.user.id;
+    const groups = await Group.find({teacher:id}).populate('students');
     return res.status(200).json(groups)
 }
 
