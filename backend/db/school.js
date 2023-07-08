@@ -6,6 +6,9 @@ const SchoolSchema=new Schema({
         type:"string",
         required:true
     },
+    address:{
+        type:String
+    }
     // teacher:[
     //     {
     //         type:Schema.Types.ObjectId,
