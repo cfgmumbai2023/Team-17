@@ -37,7 +37,7 @@ function StudentSearch() {
 
 
   const handleAnalyticsClick = (student) => {
-    fetch(`YOUR_API_ENDPOINT?student_id=${student.id}`)
+    fetch(`YOUR_API_ENDPOINT?id=${student.id}`)
       .then(response => response.json())
       .then(data => {
         setEvaluations([... data]);     
