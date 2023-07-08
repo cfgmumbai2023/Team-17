@@ -8,8 +8,8 @@ router.post('/createGroup',authHandler,createGroup)
 
 router.get('/getGroups',authHandler,getGroups)
 
-router.delete('/deleteGroup',authHandler,deleteGroup)
+router.delete('/deleteGroup/:id',authHandler,deleteGroup)
 
-router.post('/addStudent',authHandler, addStudent)
+router.post('/addStudent/:gid',authHandler, addStudent)
 
 module.exports = router;
