@@ -11,7 +11,6 @@ const AddStudent = () => {
                         id="exampleInputEmail1"
                         aria-describedby="emailHelp"
                     />
-                    
                 </div>
                 <div className="form-group mt-3" >
                     <label htmlFor="exampleInputEmail1">BMC School</label>
