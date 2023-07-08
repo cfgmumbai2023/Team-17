@@ -19,7 +19,7 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
-import  addSchool from "scenes/addSchool";
+import  AddSchool from "scenes/addSchool";
 import StudentSearch from "scenes/searchStudent";
 
 
@@ -48,7 +48,7 @@ function App() {
               <Route path="/breakdown" element={<Breakdown />} />
               <Route path="/admin" element={<Admin />} />
               <Route path="/performance" element={<Performance />} />
-              <Route path="/addSchool" element={<addSchool />} />
+              <Route path="/addSchool" element={<AddSchool />} />
               <Route path="/studentSearch" element={<addSchool />} />
             </Route>
           </Routes>

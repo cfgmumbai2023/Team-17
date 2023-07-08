@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const addSchool = ()=> {
+const AddSchool = ()=> {
   const [schoolName, setSchoolName] = useState('');
   const [schoolAddress, setSchoolAddress] = useState('');
 
@@ -43,7 +43,7 @@ const addSchool = ()=> {
   };
 
   return (
-    <div className="add-school-container">
+    <div className="form-group mt-3">
       <h1>Add School</h1>
       <form onSubmit={handleSubmit} className="add-school-form">
         <div className="form-group">
@@ -56,7 +56,7 @@ const addSchool = ()=> {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="form-group mt-3">
           <label htmlFor="schoolAddress">School Address:</label>
           <input
             type="text"
@@ -66,10 +66,11 @@ const addSchool = ()=> {
             required
           />
         </div>
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="btn btn-primary mt-3">Submit</button>
       </form>
     </div>
+    
   );
 }
 
-export default addSchool;
+export default AddSchool;

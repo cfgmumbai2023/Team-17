@@ -23,6 +23,11 @@ import FlexBetween from "./FlexBetween";
 
 const navItems = [
   {
+    text: "Add School",
+    route: "/addSchool",
+    role : "teacher"
+  },
+  {
     text: "Add Student",
     route: "/addStudent",
     role : "teacher"
@@ -32,6 +37,7 @@ const navItems = [
     route: "/addTeacher",
     role : "admin"
   },
+ 
   {
     text: "View Groups",
     route: "/viewGroups",
