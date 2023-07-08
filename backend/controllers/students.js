@@ -74,7 +74,7 @@ const updateStudent = async (req, res, next) => {
 
 const getStudent = async (req, res) => {
   const id = req.params.id;
-  const student = await Student.findById(id);
+  const student = await Student.findOne({aadhar:id});
 
   return res.status(200).json({
     success: true,
