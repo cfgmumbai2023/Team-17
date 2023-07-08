@@ -19,6 +19,7 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
+import AddTeacher from "scenes/addTeacher";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -33,6 +34,8 @@ function App() {
               <Route path="/" element={<Navigate to="/addStudent" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/addStudent" element={<AddStudent />} />
+              <Route path="/addTeacher" element={<AddTeacher />} />
+
               <Route path="/viewGroups" element={<ViewGroups />} />
               <Route path="/updateStudentPerformance" element={<UpdateStudents />} />
               <Route path="/products" element={<Products />} />
