@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const App = () => {
+
+const ViewGroups = () => {
   const [groups, setGroups] = useState([]);
   const [students, setStudents] = useState([]);
-
+  const navigate = useNavigate();
+  
   const fetchGroups = async () => {
     const response = await fetch(
       "http://localhost:5000/api/groups/getGroups/",
@@ -28,26 +31,49 @@ const App = () => {
       <div style={{ display: "flex" }}>
         <div style={{ flex: 1 }}>
           <h2>Groups</h2>
-          <ul>
-            {groups.map((group) => (
-              <li key={group.id}>
-                <h5>{group.objective}</h5>
-                <button className="btn-primary btn" onClick={() => showStudent(group)}>
-                  Show Students
-                </button>
-              </li>
-            ))}
-          </ul>
+          <table>
+            <thead>
+              <tr>
+                <th>Objective</th>
+                <th>Students</th>
+              </tr>
+            </thead>
+            <tbody>
+              {groups.map((group) => (
+                <tr key={group.id}>
+                  <td>{group.objective}</td>
+                  <td>
+                    <button
+                      className="btn-primary btn"
+                      onClick={() => showStudent(group)}
+                    >
+                      Show Students
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <div style={{ flex: 1 }}>
           <h2>Students</h2>
           {students.length > 0 ? (
-            students.map((student) => (
-              <div key={student.id}>
-                <h5>{student.name}</h5>
-                <p>{student.email}</p>
-              </div>
-            ))
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                {students.map((student) => (
+                  <a key={student.id} onClick={() => navigate("/")}>
+                    <td>{student.name}</td>
+                    <td>{student.email}</td>
+                  </a>
+                ))}
+              </tbody>
+            </table>
           ) : (
             <p>No students to show</p>
           )}
@@ -60,4 +86,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default ViewGroups;
