@@ -32,7 +32,7 @@ const adlogin = async(req, res) => {
         throw new APIError('Password does not match',400)
     }
     const token = chechUser.createJWT();
-    res.status(201).json({msg:'Login Successful',token:token});
+    res.status(201).json({msg:'Login Successful',token:token,admin:true});
 }
 
 const adgetUser = (req,res) => {
