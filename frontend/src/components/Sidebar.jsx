@@ -42,7 +42,7 @@ const navItems = [
     role: "teacher",
   },
   {
-    text: "Global Analytics",
+    text: "Group Analytics",
     route: "/globalAnalytics",
     role: "admin",
   },
