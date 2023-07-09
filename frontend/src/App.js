@@ -49,7 +49,7 @@ function App() {
               <Route path="/admin" element={<Admin />} />
               <Route path="/performance" element={<Performance />} />
               <Route path="/addSchool" element={<AddSchool />} />
-              <Route path="/studentSearch" element={<addSchool />} />
+              <Route path="/studentSearch" element={<StudentSearch />} />
             </Route>
           </Routes>
         </ThemeProvider>
