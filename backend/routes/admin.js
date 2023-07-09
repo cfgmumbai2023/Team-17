@@ -11,6 +11,8 @@ router.post('/login',adlogin)
 
 router.post('/createSchool',authHandler,createSchool)
 
+router.post('/createTeacher',authHandler,createTeacher)
+
 // router.post('/addTeacher',authHandler,addTeacher)
 
 module.exports = router;
