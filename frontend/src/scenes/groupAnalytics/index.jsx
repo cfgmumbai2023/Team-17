@@ -5,9 +5,9 @@ import { useState } from "react";
 
 const GroupAnalytics = () => {
   const data1 = [
-    { label: "A", value: 10 },
-    { label: "B", value: 20 },
-    { label: "C", value: 15 },
+    { label: "Param 1", value: 10 },
+    { label: "Param 2", value: 20 },
+    { label: "Param 3", value: 15 },
     // Add more data points as needed
   ];
 
@@ -15,9 +15,9 @@ const GroupAnalytics = () => {
     {
       id: "series1",
       data: [
-        { x: "A", y: 30 },
-        { x: "B", y: 50 },
-        { x: "C", y: 55 },
+        { x: "Param 1", y: 30 },
+        { x: "Param 2", y: 50 },
+        { x: "Param 3", y: 55 },
         // Add more data points as needed
       ],
     },
