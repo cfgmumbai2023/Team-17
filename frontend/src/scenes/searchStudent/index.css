@@ -5,11 +5,7 @@
     color: black;
     padding: 20px;
   }
-  
-  .heading {
-     
-    color: goldenrod;
-  }
+
   
   .search-container {
     display: flex;
@@ -39,10 +35,10 @@
   .student-card {
     background-color: white;
      
-    padding: 10px;
+    padding: 5px;
     font-weight: bold; /* Make the text bold */
      margin-left: 2mm;
-     font-size: 20px; 
+     font-size: 14px; 
   }
   
   .no-data-message {

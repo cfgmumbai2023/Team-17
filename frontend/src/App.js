@@ -19,11 +19,8 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
-<<<<<<< HEAD
 import  AddSchool from "scenes/addSchool";
 import StudentSearch from "scenes/searchStudent";
-
-=======
 import AddTeacher from "scenes/addTeacher";
 import GroupAnalytics from "scenes/groupAnalytics";
 import LoginPage from "LandingPage";
