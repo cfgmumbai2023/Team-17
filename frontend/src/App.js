@@ -20,6 +20,7 @@ import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
 import AddTeacher from "scenes/addTeacher";
+import LoginPage from "LandingPage";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -29,13 +30,15 @@ function App() {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          
+
           <Routes>
+          <Route path="/" element={<LoginPage />} />
             <Route element={<Layout />}>
-              <Route path="/" element={<Navigate to="/addStudent" replace />} />
+              {/* <Route path="/" element={<Navigate to="/addStudent" replace />} /> */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/addStudent" element={<AddStudent />} />
               <Route path="/addTeacher" element={<AddTeacher />} />
-
               <Route path="/viewGroups" element={<ViewGroups />} />
               <Route path="/updateStudentPerformance" element={<UpdateStudents />} />
               <Route path="/products" element={<Products />} />
