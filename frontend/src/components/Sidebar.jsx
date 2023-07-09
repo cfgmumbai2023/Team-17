@@ -55,7 +55,7 @@ const navItems = [
     role: "admin"
   },
   {
-    text: "Update Student Peformance",
+    text: "Evaluation",
     route: "/updateStudentPerformance",
     role: "teacher"
   }

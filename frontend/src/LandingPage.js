@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 
 function LoginPage() {
@@ -6,6 +7,8 @@ function LoginPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  let navigate = useNavigate()
+
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -32,7 +35,9 @@ function LoginPage() {
       setEmail('');
       setPassword('');
       setConfirmPassword('');
+
     }
+    navigate('/addStudent')
   };
 
   return (
@@ -43,6 +48,34 @@ function LoginPage() {
         </div>
         <div className="col-md-6 login-panel">
           <h2>Login Panel</h2>
+          <>
+            <div className="form-check form-check-inline d-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                defaultValue="option1"
+              />
+              <label className="form-check-label" htmlFor="inlineRadio1">
+                Login As Admin
+              </label>
+            </div>
+            <div className="form-check form-check-inline d-inline">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                defaultValue="option2"
+              />
+              <label className="form-check-label" htmlFor="inlineRadio2">
+              Login As Teacher
+              </label>
+            </div>
+            
+          </>
+
           {error && <div className="alert alert-danger">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="mb-3">

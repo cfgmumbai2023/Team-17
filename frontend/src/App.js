@@ -26,7 +26,7 @@ import StudentSearch from "scenes/searchStudent";
 =======
 import AddTeacher from "scenes/addTeacher";
 import GroupAnalytics from "scenes/groupAnalytics";
->>>>>>> 469fc2ccb7257472e1576cff82ab7a31e099f348
+import LoginPage from "LandingPage";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -36,9 +36,12 @@ function App() {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          
+
           <Routes>
+          <Route path="/" element={<LoginPage />} />
             <Route element={<Layout />}>
-              <Route path="/" element={<Navigate to="/addStudent" replace />} />
+              {/* <Route path="/" element={<Navigate to="/addStudent" replace />} /> */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/addStudent" element={<AddStudent />} />
               <Route path="/addTeacher" element={<AddTeacher />} />

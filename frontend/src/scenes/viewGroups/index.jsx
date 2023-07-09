@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 
@@ -21,7 +21,9 @@ const ViewGroups = () => {
     const data = await response.json();
     setGroups(data);
   };
-
+  useEffect(() => {
+    fetchGroups()
+  }, [])
   const showStudent = (group) => {
     setStudents(group.students);
   };
@@ -35,7 +37,6 @@ const ViewGroups = () => {
             <thead>
               <tr>
                 <th>Objective</th>
-                <th>Students</th>
               </tr>
             </thead>
             <tbody>
@@ -56,13 +57,12 @@ const ViewGroups = () => {
           </table>
         </div>
         <div style={{ flex: 1 }}>
-          <h2>Students</h2>
+          
           {students.length > 0 ? (
             <table>
               <thead>
                 <tr>
                   <th>Name</th>
-                  <th>Email</th>
                 </tr>
               </thead>
               <tbody>
@@ -79,9 +79,9 @@ const ViewGroups = () => {
           )}
         </div>
       </div>
-      <button className="btn-primary btn" onClick={fetchGroups}>
+      {/* <button className="btn-primary btn" onClick={fetchGroups}>
         Load Groups
-      </button>
+      </button> */}
     </div>
   );
 };
