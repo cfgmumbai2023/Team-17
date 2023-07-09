@@ -62,5 +62,5 @@ const createTeacher = async (req,res) =>{
 
 
 module.exports = {
-    adregister,adlogin,adgetUser, createSchool
+    adregister,adlogin,adgetUser, createSchool, createTeacher
 }

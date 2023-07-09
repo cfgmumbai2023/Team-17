@@ -210,7 +210,11 @@ const AddStudent = () => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary mt-3">
+        <button
+          type="submit"
+          className="btn btn-primary mt-3"
+          style={{ background: "#cca752" }}
+        >
           Submit
         </button>
       </form>

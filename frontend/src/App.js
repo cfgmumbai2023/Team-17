@@ -20,6 +20,7 @@ import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
 import AddTeacher from "scenes/addTeacher";
+import GroupAnalytics from "scenes/groupAnalytics";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -35,7 +36,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/addStudent" element={<AddStudent />} />
               <Route path="/addTeacher" element={<AddTeacher />} />
-
+              <Route path="/globalAnalytics" element={<GroupAnalytics />} />
               <Route path="/viewGroups" element={<ViewGroups />} />
               <Route path="/updateStudentPerformance" element={<UpdateStudents />} />
               <Route path="/products" element={<Products />} />
