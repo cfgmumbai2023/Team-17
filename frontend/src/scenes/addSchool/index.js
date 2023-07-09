@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddSchool = ()=> {
+const AddSchool = () => {
   const [schoolName, setSchoolName] = useState('');
   const [schoolAddress, setSchoolAddress] = useState('');
 
@@ -43,33 +43,31 @@ const AddSchool = ()=> {
   };
 
   return (
-    <div className="form-group mt-3">
-      <h1>Add School</h1>
+    <div className="form-group">
       <form onSubmit={handleSubmit} className="add-school-form">
-        <div className="form-group">
-          <label htmlFor="schoolName">School Name:</label>
+        <div className="form-group" >
+          <label htmlFor="exampleInputEmail1">School Name</label>
           <input
-            type="text"
-            id="schoolName"
-            value={schoolName}
-            onChange={handleSchoolNameChange}
-            required
+            type="Text"
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
           />
         </div>
-        <div className="form-group mt-3">
-          <label htmlFor="schoolAddress">School Address:</label>
+        <div className="form-group " >
+          <label htmlFor="exampleInputEmail1">School Address</label>
           <input
-            type="text"
-            id="schoolAddress"
-            value={schoolAddress}
-            onChange={handleSchoolAddressChange}
-            required
+            type="Text"
+            className="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
           />
+
         </div>
         <button type="submit" className="btn btn-primary mt-3">Submit</button>
       </form>
     </div>
-    
+
   );
 }
 

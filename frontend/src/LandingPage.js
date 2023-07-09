@@ -106,7 +106,7 @@ function LoginPage() {
                 required
               />
             </div>
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label htmlFor="confirmPassword" className="form-label">
                 Confirm Password
               </label>
@@ -119,7 +119,7 @@ function LoginPage() {
                 onChange={handleConfirmPasswordChange}
                 required
               />
-            </div>
+            </div> */}
             <button type="submit" className="btn btn-primary">
               Login
             </button>

@@ -1,9 +1,9 @@
 .login-page {
     height: 100vh;
   }
-  
+
   .login-bg {
-    /* background-image: url('C:\Users\MAHAKAAL\Desktop\urmi.jpg'); */
+    background-image: url(./assets/urmi.jpg);
     background-size: cover;
     background-position: center;
     display: flex;

@@ -67,9 +67,11 @@ const ViewGroups = () => {
               </thead>
               <tbody>
                 {students.map((student) => (
-                  <a key={student.id} onClick={() => navigate("/")}>
-                    <td>{student.name}</td>
-                    <td>{student.email}</td>
+                  <a key={student.id} onClick={() => navigate("/studentSearch")}>
+                    <ul>
+                      <li>{student.name}</li>
+                    </ul>
+                    
                   </a>
                 ))}
               </tbody>
