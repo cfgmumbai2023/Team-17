@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const ViewGroups = () => {
@@ -45,6 +45,7 @@ const ViewGroups = () => {
                   <td>{group.objective}</td>
                   <td>
                     <button
+                      style={{ background: "#cca752" }}
                       className="btn-primary btn"
                       onClick={() => showStudent(group)}
                     >
@@ -57,7 +58,6 @@ const ViewGroups = () => {
           </table>
         </div>
         <div style={{ flex: 1 }}>
-          
           {students.length > 0 ? (
             <table>
               <thead>
@@ -67,11 +67,13 @@ const ViewGroups = () => {
               </thead>
               <tbody>
                 {students.map((student) => (
-                  <a key={student.id} onClick={() => navigate("/studentSearch")}>
+                  <a
+                    key={student.id}
+                    onClick={() => navigate("/studentSearch")}
+                  >
                     <ul>
                       <li>{student.name}</li>
                     </ul>
-                    
                   </a>
                 ))}
               </tbody>

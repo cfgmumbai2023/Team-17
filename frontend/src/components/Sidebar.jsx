@@ -1,22 +1,16 @@
 import React from "react";
 import {
   Box,
-  Divider,
   Drawer,
   IconButton,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   Typography,
   useTheme,
 } from "@mui/material";
-import {
-  SettingsOutlined,
-  ChevronLeft,
-  ChevronRightOutlined,
-} from "@mui/icons-material";
+import { ChevronLeft, ChevronRightOutlined } from "@mui/icons-material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
@@ -25,44 +19,41 @@ const navItems = [
   {
     text: "Add School",
     route: "/addSchool",
-    role : "teacher"
+    role: "teacher",
   },
   {
     text: "Add Student",
     route: "/addStudent",
-    role : "teacher"
+    role: "teacher",
   },
   {
     text: "Add Teacher",
     route: "/addTeacher",
-    role : "admin"
+    role: "admin",
   },
-  
- 
   {
     text: "View Groups",
     route: "/viewGroups",
-    role : "teacher"
+    role: "teacher",
   },
   {
     text: "Students Analytics",
     route: "/studentSearch",
-    role: "teacher"
+    role: "teacher",
   },
   {
     text: "Global Analytics",
     route: "/globalAnalytics",
-    role: "admin"
+    role: "admin",
   },
   {
     text: "Evaluation",
     route: "/updateStudentPerformance",
-    role: "teacher"
-  }
+    role: "teacher",
+  },
 ];
 
 const Sidebar = ({
-  user,
   drawerWidth,
   isSidebarOpen,
   setIsSidebarOpen,
@@ -112,15 +103,15 @@ const Sidebar = ({
               </FlexBetween>
             </Box>
             <List>
-              {navItems.map(({ text, role, route, icon }) => {                
+              {navItems.map(({ text, role, route, icon }) => {
                 const lcText = text.toLowerCase();
-                
+
                 return (
                   <ListItem key={text} disablePadding>
                     <ListItemButton
                       onClick={() => {
-                        navigate(route);
                         setActive(lcText);
+                        navigate(route);
                       }}
                       sx={{
                         backgroundColor:
@@ -143,8 +134,6 @@ const Sidebar = ({
               })}
             </List>
           </Box>
-
-        
         </Drawer>
       )}
     </Box>

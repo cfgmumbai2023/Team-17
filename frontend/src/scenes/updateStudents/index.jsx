@@ -10,18 +10,13 @@ const UpdateStudents = () => {
   const [show,setshow]=useState(0);
 
   return (
-    <div className='container' style={{ width: "700px" }}>
+    <div className="container" style={{ width: "700px" }}>
       <div className="mb-3">
         <label htmlFor="email" className="form-label">
           Enter Student id
         </label>
-        <input
-          type="text"
-          className="form-control"
-          required
-        />
-        
-       </div>
+        <input type="text" className="form-control" required />
+      </div>
       <label htmlFor="customRange3" className="form-label d-block">
         Fraction
       </label>
@@ -31,9 +26,11 @@ const UpdateStudents = () => {
         min="0"
         max="10"
         value={Fraction}
-        onChange={(e) => { setFraction(e.target.value) }}
+        onChange={(e) => {
+          setFraction(e.target.value);
+        }}
       />
-      <span className='mx-2'>{Fraction}</span>
+      <span className="mx-2">{Fraction}</span>
 
       <label htmlFor="customRange3" className="form-label d-block">
         Addition
@@ -44,9 +41,11 @@ const UpdateStudents = () => {
         min="0"
         max="10"
         value={Addition}
-        onChange={(e) => { setAddition(e.target.value) }}
+        onChange={(e) => {
+          setAddition(e.target.value);
+        }}
       />
-      <span className='mx-2'>{Addition}</span>
+      <span className="mx-2">{Addition}</span>
 
       <label htmlFor="customRange3" className="form-label d-block">
         Subtraction
@@ -57,9 +56,11 @@ const UpdateStudents = () => {
         min="0"
         max="10"
         value={Subtraction}
-        onChange={(e) => { setSubtraction(e.target.value) }}
+        onChange={(e) => {
+          setSubtraction(e.target.value);
+        }}
       />
-      <span className='mx-2'>{Subtraction}</span>
+      <span className="mx-2">{Subtraction}</span>
 
       <label htmlFor="customRange3" className="form-label d-block">
         Social Skills
@@ -70,22 +71,26 @@ const UpdateStudents = () => {
         min="0"
         max="10"
         value={Social}
-        onChange={(e) => { setSocial(e.target.value) }}
+        onChange={(e) => {
+          setSocial(e.target.value);
+        }}
       />
-      <span className='mx-2'>{Social}</span>
+      <span className="mx-2">{Social}</span>
 
       <label htmlFor="customRange3" className="form-label d-block">
         Motor Skills
       </label>
       <input
-        style={{ width: "600px" }}
+        style={{ width: "600px"}}
         type="range"
         min="0"
         max="10"
         value={Motor}
-        onChange={(e) => { setMotor(e.target.value) }}
+        onChange={(e) => {
+          setMotor(e.target.value);
+        }}
       />
-      <span className='mx-2'>{Motor}</span>
+      <span className="mx-2">{Motor}</span>
 
       <label htmlFor="customRange3" className="form-label d-block">
         Vocabluary
@@ -96,19 +101,21 @@ const UpdateStudents = () => {
         min="0"
         max="10"
         value={Vocabluary}
-        onChange={(e) => { setVocabluary(e.target.value) }}
+        onChange={(e) => {
+          setVocabluary(e.target.value);
+        }}
       />
-      <span className='mx-2'>{Vocabluary}</span>
+      <span className="mx-2">{Vocabluary}</span>
 
-      <button type="submit" className="btn btn-primary mt-3">
+      <button
+        type="submit"
+        className="btn btn-primary mt-3"
+        style={{ background: "#cca752" }}
+      >
         Submit
       </button>
-
-
-
-
     </div>
-  )
+  );
 }
 
 export default UpdateStudents
