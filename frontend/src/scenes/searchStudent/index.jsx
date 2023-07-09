@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import LineChart from 'components/LineChart';
 import './index.css'
 
+ 
+
 function StudentSearch() {
   const [searchQuery, setSearchQuery] = useState('');
   const [studentData, setStudentData] = useState([]);
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [evaluations, setEvaluations] = useState([]);
+  const [barData, setbarData] = useState([]);
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
@@ -73,6 +76,13 @@ function StudentSearch() {
       },
     ];
 
+
+    const totalScores = dummyData.map((student) =>
+    student.evaluations.map((evaluation) => evaluation.totalscore)
+  );
+
+ 
+
     // Filter the dummy data based on the search query
     const filteredData = dummyData.filter((student) =>
       student.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -80,6 +90,8 @@ function StudentSearch() {
 
     // Update the student data with the filtered results
     setStudentData(filteredData);
+    setbarData(totalScores);
+    console.log(barData);
   };
 
   const handleViewDetailsClick = (student) => {
@@ -99,7 +111,7 @@ function StudentSearch() {
 
   return (
     <div>
-      <h1 className='form-group mt-3'>Student Search</h1>
+      <h1 className='form-group mt-3 heading'>Student Search</h1>
       <div className='form-group mt-3'>
         <input
           type="text"
@@ -145,6 +157,8 @@ function StudentSearch() {
               </div>
             )}
           </div>
+           
+
         </div>
       )}
     </div>
@@ -152,3 +166,5 @@ function StudentSearch() {
 }
 
 export default StudentSearch;
+
+ 

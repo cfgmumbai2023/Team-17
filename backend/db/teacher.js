@@ -19,6 +19,12 @@ const TeacherSchema = new mongoose.Schema({
     school:{
         type: mongoose.Schema.Types.ObjectId,
         ref:'School'
+    },
+    phone:{
+        type:String,
+    },
+    qualification:{
+        type: String
     }
 },{
     timestamps:true

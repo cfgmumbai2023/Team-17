@@ -37,6 +37,7 @@ const navItems = [
     route: "/addTeacher",
     role : "admin"
   },
+  
  
   {
     text: "View Groups",
@@ -45,7 +46,7 @@ const navItems = [
   },
   {
     text: "Students Analytics",
-    route: "/studentsAnalytics",
+    route: "/studentSearch",
     role: "teacher"
   },
   {

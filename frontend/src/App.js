@@ -19,9 +19,14 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
+<<<<<<< HEAD
 import  AddSchool from "scenes/addSchool";
 import StudentSearch from "scenes/searchStudent";
 
+=======
+import AddTeacher from "scenes/addTeacher";
+import GroupAnalytics from "scenes/groupAnalytics";
+>>>>>>> 469fc2ccb7257472e1576cff82ab7a31e099f348
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -36,6 +41,8 @@ function App() {
               <Route path="/" element={<Navigate to="/addStudent" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/addStudent" element={<AddStudent />} />
+              <Route path="/addTeacher" element={<AddTeacher />} />
+              <Route path="/globalAnalytics" element={<GroupAnalytics />} />
               <Route path="/viewGroups" element={<ViewGroups />} />
               <Route path="/updateStudentPerformance" element={<UpdateStudents />} />
               <Route path="/products" element={<Products />} />

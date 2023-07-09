@@ -7,7 +7,7 @@
   }
   
   .heading {
-    text-align: center;
+     
     color: goldenrod;
   }
   
@@ -38,8 +38,11 @@
   
   .student-card {
     background-color: white;
-    border: 1px solid goldenrod;
+     
     padding: 10px;
+    font-weight: bold; /* Make the text bold */
+     margin-left: 2mm;
+     font-size: 20px; 
   }
   
   .no-data-message {
@@ -70,6 +73,8 @@
     background-color: white;
     padding: 20px;
     position: relative;
+    height: 600px; /* Set the desired height */
+  width: 600px; /* Set the desired width */
   }
   
   .close {
